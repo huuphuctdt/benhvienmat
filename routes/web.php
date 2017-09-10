@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('layouts.master');
 });
+Route::get('/admin', function () {
+    return view('admin.master');
+});
+Route::get('/admin/logo', 'LogoController@index');

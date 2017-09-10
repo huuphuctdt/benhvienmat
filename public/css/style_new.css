@@ -521,3 +521,21 @@ h1, h2, h3, h4, h5, h6, .heading-font {
     color: #ffffff!important;
 }
 .po-contact a:hover{text-decoration: none}
+
+
+@media only screen and (max-width: 768px) {
+    #parent_gmap_canvas{
+        height:400px;
+        width:290px;
+    }
+}
+#gmap_canvas{
+    height:400px;width:100%;
+}
+#gmap_canvas img {
+    max-width: none !important;
+    background: none !important
+}
+/*#parent_gmap_canvas{*/
+/*overflow:hidden;height:400px;width:588px;*/
+/*}*/
