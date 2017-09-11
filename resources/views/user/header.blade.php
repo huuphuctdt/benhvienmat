@@ -7,7 +7,7 @@
                 <div id="logo" class="flex-col logo">
                     <!-- Header logo -->
                     <a href="{{ url('/') }}" title="Bệnh Viện Mắt Long Xuyên" rel="home">
-                        <img width="198" height="69" src="{{ url('images/logo.png') }}" class="header_logo header-logo" alt="Bệnh Viện Mắt Long Xuyên"/>
+                        <img width="198" height="69" src="{{ url('images/logo_2.png') }}" class="header_logo header-logo" alt="Bệnh Viện Mắt Long Xuyên"/>
                     </a>
                 </div>
 

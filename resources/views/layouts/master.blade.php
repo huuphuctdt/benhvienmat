@@ -22,6 +22,9 @@
     {{--<script src="{{ asset('/js/app.js') }}"></script>--}}
     <link rel="icon" href="{{ url('images/logo.jpg') }}" sizes="32x32" />
     <style>
+        .bg-fill {
+            background-position: 50% 100%;
+        }
         .ct-topbar {
             text-align: right;
             background: #eee;
@@ -137,18 +140,18 @@
 
 <div id="wrapper">
 
-    <div class="ct-topbar">
-        <div class="container">
-            <ul class="list-unstyled list-inline ct-topbar__list">
-                <li class="ct-language">Language <i class="fa fa-arrow-down"></i>
-                    <ul class="list-unstyled ct-language__dropdown">
-                        <li><a href="#googtrans(en|en)" class="lang-en lang-select" data-lang="en"><img src="{{ url('images/flag-eng.png') }}" width="25" height="25" alt="USA"></a></li>
-                        <li><a href="#googtrans(en|vi)" class="lang-es lang-select" data-lang="vi"><img src="https://www.solodev.com/assets/google-translate/flag-vietnam.png" alt="VIETNAM"></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
+    {{--<div class="ct-topbar">--}}
+        {{--<div class="container">--}}
+            {{--<ul class="list-unstyled list-inline ct-topbar__list">--}}
+                {{--<li class="ct-language">Language <i class="fa fa-arrow-down"></i>--}}
+                    {{--<ul class="list-unstyled ct-language__dropdown">--}}
+                        {{--<li><a href="#googtrans(en|en)" class="lang-en lang-select" data-lang="en"><img src="{{ url('images/flag-eng.png') }}" width="25" height="25" alt="USA"></a></li>--}}
+                        {{--<li><a href="#googtrans(en|vi)" class="lang-es lang-select" data-lang="vi"><img src="https://www.solodev.com/assets/google-translate/flag-vietnam.png" alt="VIETNAM"></a></li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
 
     <script type="text/javascript">
@@ -180,14 +183,6 @@
         });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-
-
-
-    <div>
-        Tên tôi là Nguyễn Văn Test. Tôi 17 tuổi.
-    </div>
 
     @include('user.header')
 

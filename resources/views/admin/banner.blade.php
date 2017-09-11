@@ -3,10 +3,10 @@
     <!-- Page Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Logo</h1>
+            <h1 class="page-header">Banner Lớn</h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-dashboard"></i> Logo
+                    <i class="fa fa-dashboard"></i> Banner Lớn
                 </li>
             </ol>
         </div>
@@ -18,13 +18,13 @@
                 {!! Session::get('flash_messages') !!}
             </div>
         @endif
-        <form class="form-horizontal" action="{{ url('admin/logo/update') }}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{ url('admin/banner/update') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
-                <label class="control-label col-md-2" for="logo">Logo :</label>
-                <div class="col-md-10 {{ $errors->has('logo') ? ' has-error' : '' }}">
-                    <img src="{{ url('images/'.$logo->image) }}" alt="logo" title="logo" name="file">
-                    <input type="file" name="logo" class="form-control">
+                <label class="control-label col-md-2" for="logo">Banner :</label>
+                <div class="col-md-5 {{ $errors->has('logo') ? ' has-error' : '' }}">
+                    <img src="{{ url('images/'.$banner->image) }}" alt="logo" title="logo" name="file" width="700">
+                    <input type="file" name="logo" class="form-control m-t-20">
                     @if ($errors->has('logo'))
                         <span class="help-block">
                             <strong>{{ $errors->first('logo') }}</strong>
@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input type="hidden" name="po_logo_id" value="{{ $logo->id }}">
+                    <input type="hidden" name="po_banner_id" value="{{ $banner->id }}">
                     <button type="submit" class="btn btn-primary">Xác nhận</button>
                 </div>
             </div>

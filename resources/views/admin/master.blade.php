@@ -74,15 +74,38 @@
                         <li>
                             <a href="/admin/menu">Menu</a>
                         </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="javascript:;" data-toggle="collapse" data-target="#ul2">
+                        <i class="fa fa-fw fa-header"></i> Banner <i class="fa fa-fw fa-caret-down"></i>
+                    </a>
+                    <ul id="ul2" class="collapse">
                         <li>
-                            <a href="/admin/slider">Slider</a>
+                            <a href="/admin/banner">Banner Lớn</a>
+                        </li>
+                        <li>
+                            <a href="/admin/banner-child">Banner Nhỏ</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ url('admin/introduce') }}">
+                    <a href="{{ url('admin/intro') }}">
                         <i class="fa fa-fw fa-th"></i> Giới thiệu
                     </a>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#ulpost">
+                        <i class="fa fa-fw fa-th-large"></i> Bài viết <i class="fa fa-fw fa-caret-down"></i>
+                    </a>
+                    <ul id="ulpost" class="collapse">
+                        <li>
+                            <a href="{{ url('admin/post_category') }}">Danh mục</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/post') }}">Bài viết</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

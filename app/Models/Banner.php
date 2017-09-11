@@ -5,25 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 
-class Logo extends Model
+class Banner extends Model
 {
-    protected $table = 'logo';
-    protected $fillable = ['image'];
+    protected $table = 'banner';
+    protected $fillable = ['image','link'];
 
-    public function getLogo(){
-        $logo = Logo::all();
-        return $logo->first();
+    public function getBanner(){
+        $banner = Banner::all();
+        return $banner->first();
     }
 
-    public function updateLogo($request){
+    public function updateBanner($request){
         if($request->hasFile('logo')){
-            $image_old = Logo::find($request->po_logo_id)->image;
+            $image_old = Banner::find($request->po_banner_id)->image;
             File::delete(public_path('images').'/'.$image_old);
             $file= $request->file('logo');
             $imageName = time().".".$file->extension();
             $path = public_path('images');
             $file->move($path , $imageName);
-            $flag = Logo::query()->update(['image' => $imageName]);
+            $flag = Banner::query()->update(['image' => $imageName]);
             if($flag){
                 return true;
             }else{
