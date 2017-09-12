@@ -15,10 +15,17 @@ Route::get('/', function () {
     return view('layouts.master');
 });
 
+Route::post('upload-test','PostController@test');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.master');
+    });
+
+    Route::get('/test', function () {
+        $a = \App\Models\Post::orderBy('created_at','desc')->get();
+        $data['a'] = $a->first();
+        return view('admin.test', $data);
     });
 
     Route::get('/logo', 'LogoController@index');

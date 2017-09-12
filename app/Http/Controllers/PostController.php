@@ -96,4 +96,14 @@ class PostController extends Controller
             return redirect('admin/post')->with(['flash_level' => 'danger', 'flash_messages' => 'Cập nhật thất bại!']);
         }
     }
+
+    public function test(Request $request){
+        $post = new Post();
+        $post->category_id = 1;
+        $post->image = 'test.png';
+        $post->name = "Test";
+        $post->content = $request->input('content');
+        $post->save();
+        //echo "123123123";
+    }
 }
