@@ -60,4 +60,18 @@ Route::prefix('admin')->group(function () {
     Route::post('post_category/delete','PostCategoryController@delete');
     Route::get('post_category/{id}','PostCategoryController@edit');
     Route::post('post_category/edit','PostCategoryController@save_edit');
+
+    Route::get('review','ReviewController@index');
+    Route::get('review/create','ReviewController@create');
+    Route::post('review/create_review','ReviewController@create_review');
+    Route::post('review/delete','ReviewController@delete');
+    Route::get('review/{id}','ReviewController@edit');
+    Route::post('review/edit','ReviewController@save_edit');
+
+    Route::get('question','QuestionController@index');
+    Route::get('question/create','QuestionController@create');
+    Route::post('question/create_question','QuestionController@create_question');
+    Route::post('question/delete','QuestionController@delete');
+    Route::get('question/{id}','QuestionController@edit');
+    Route::post('question/edit','QuestionController@save_edit');
 });

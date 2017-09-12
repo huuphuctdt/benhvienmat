@@ -68,12 +68,8 @@ class PostController extends Controller
     public function delete(Request $request)
     {
         $post = $this->post->getId($request->po_post_id);
-        $flag = false;
-        if (!empty($post)) {
-            $flag_1 = File::delete(public_path('upload') . '/' . $post->image);
-            $flag = $post->delete();
-        }
-        if ($flag && $flag_1) {
+        $flag = $post->delete();
+        if ($flag) {
             return redirect('admin/post')->with(['flash_level' => 'success', 'flash_messages' => 'Xoá thành công!']);
         } else {
             return redirect('admin/post')->with(['flash_level' => 'danger', 'flash_messages' => 'Xoá thất bại!']);

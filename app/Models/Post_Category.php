@@ -20,9 +20,19 @@ class Post_Category extends Model
     }
 
     public function createPostCategory($request){
-        $flag = Post_Category::create(['name' => trim($request->name), 'name_slug' => trim(str_slug($request->name))]);
-        if($flag){
-            return true;
+        if($request->hasFile('image')){
+            $file= $request->file('image');
+            $imageName = time().".".$file->extension();
+            $path = public_path('images');
+            $file->move($path , $imageName);
+            $flag = Post_Category::create(['image' => trim($imageName),
+                'name' => trim($request->name),
+                'name_slug' => trim(str_slug($request->name))]);
+            if($flag){
+                return true;
+            }else{
+                return false;
+            }
         }else{
             return false;
         }

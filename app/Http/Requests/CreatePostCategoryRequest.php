@@ -24,14 +24,18 @@ class CreatePostCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => 'required',
+            'image' => 'required|image|max:20480'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Tên của danh mục buộc phải nhập!'
+            'name.required' => 'Tên của danh mục buộc phải nhập!',
+            'image.required' => 'Hình buộc phải chọn.',
+            'image.image' => 'Đây không phải File hình.',
+            'image.max' => 'Tối đa dung lượng là 20Mb.'
         ];
     }
 }

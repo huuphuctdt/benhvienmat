@@ -24,7 +24,6 @@ class EditPostRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'image|max:51200',
             'post_category' => 'required',
             'name' => 'required',
             'content' => 'required'
@@ -34,8 +33,6 @@ class EditPostRequest extends FormRequest
     public function messages()
     {
         return [
-            'image.max' => 'Upload file tối đa có dung lượng là 50Mb!',
-            'image.image' => 'Hình ảnh không đúng định dạng!',
             'post_category.required' => 'Danh mục buộc phải chọn!',
             'name.required' => 'Tên bài viết buộc phải nhập!',
             'content.required' => 'Nội dung bài viết buộc phải nhập!'

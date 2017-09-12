@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePostRequest extends FormRequest
+class CreateQuestionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,6 @@ class CreatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'post_category' => 'required',
             'name' => 'required',
             'content' => 'required'
         ];
@@ -33,9 +32,8 @@ class CreatePostRequest extends FormRequest
     public function messages()
     {
         return [
-            'post_category.required' => 'Danh mục buộc phải chọn.',
-            'name.required' => 'Tên bài viết buộc phải nhập.',
-            'content.required' => 'Nội dung bài viết buộc phải nhập.'
+            'name.required' => 'Câu hỏi buộc phải nhập.',
+            'content.required' => 'Câu trả lời buộc phải nhập.'
         ];
     }
 }

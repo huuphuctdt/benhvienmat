@@ -16,7 +16,7 @@
                 <h2>Chỉnh sửa bài viết</h2>
             </div>
             <div class="col-md-4 m-t-20">
-                <a class="btn btn-success" href="{{ url('admin/post/create') }}">Create</a>
+                <a class="btn btn-success" href="{{ url('admin/post/create') }}">Tạo</a>
             </div>
         </div>
         <hr>
@@ -41,11 +41,6 @@
                                 <strong>{{ $errors->first('name') }}</strong>
                             </span>
                         @endif
-                    </div>
-                    <div class="col-md-3">
-                        <div class="col-md-12 form-group">
-                            <textarea disabled name="content" id="content" class="form-control" placeholder="Enter content..." rows="5">{{ old('note', $post->content) }}</textarea>
-                        </div>
                     </div>
                     <form class="form-horizontal" action="{{ url('admin/post/delete') }}" method="post">
                         {{ csrf_field() }}

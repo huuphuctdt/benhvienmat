@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Post_Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class PostCategoryController extends Controller
 {
@@ -64,6 +65,7 @@ class PostCategoryController extends Controller
         DB::beginTransaction();
         try {
             Post::where('category_id', $post_category->id)->update(['category_id' => 1]);
+            File::delete(public_path('images').'/'.$post_category->image);
             $flag1 = $post_category->delete();
             DB::commit();
 

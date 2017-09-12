@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePostRequest extends FormRequest
+class CreateReviewRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class CreatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'post_category' => 'required',
             'name' => 'required',
+            'image' => 'required|image|max:20480',
             'content' => 'required'
         ];
     }
@@ -33,9 +33,11 @@ class CreatePostRequest extends FormRequest
     public function messages()
     {
         return [
-            'post_category.required' => 'Danh mục buộc phải chọn.',
-            'name.required' => 'Tên bài viết buộc phải nhập.',
-            'content.required' => 'Nội dung bài viết buộc phải nhập.'
+            'name.required' => 'Tên của khách hàng buộc phải nhập.',
+            'image.required' => 'Hình buộc phải chọn.',
+            'content.required' => 'Nội dung buộc phải nhập.',
+            'image.image' => 'Đây không phải File hình.',
+            'image.max' => 'Tối đa dung lượng là 20Mb.'
         ];
     }
 }
