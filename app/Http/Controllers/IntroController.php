@@ -20,6 +20,11 @@ class IntroController extends Controller
         return view('admin.intro',$data);
     }
 
+    public function getIntro(){
+        $intro = $this->intro->getIntro();
+        return $intro;
+    }
+
     public function update(EditIntroRequest $request){
         $flag = $this->intro->updateIntro($request);
         if($flag){

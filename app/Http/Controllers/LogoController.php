@@ -20,6 +20,11 @@ class LogoController extends Controller
         return view('admin.logo',$data);
     }
 
+    public function getLogoAdmin(){
+        $logo = $this->logo->getLogoAdmin();
+        return $logo;
+    }
+
     public function update(UpdateHeaderRequets $request){
         $flag = $this->logo->updateLogo($request);
         if($flag){

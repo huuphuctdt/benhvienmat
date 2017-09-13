@@ -15,6 +15,15 @@ class Logo extends Model
         return $logo->first();
     }
 
+    public function getLogoAdmin(){
+        $logo = Logo::all();
+        $admin_show = Admin_Show::where('menu_eng','like','%header%')->first();
+        if($admin_show->is_show == 1){
+            return $logo->first();
+        }
+        return;
+    }
+
     public function updateLogo($request){
         if($request->hasFile('logo')){
             $image_old = Logo::find($request->po_logo_id)->image;

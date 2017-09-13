@@ -11,7 +11,7 @@ class Post_Category extends Model
     protected $fillable = ['name', 'name_slug','image'];
 
     public function post(){
-        return $this->hasMany('App\Models\Post','category_id');
+        return $this->hasMany('App\Models\Post','category_id')->orderBy('created_at','desc');
     }
 
     public function getPostCategory(){
@@ -64,5 +64,10 @@ class Post_Category extends Model
         }else{
             return false;
         }
+    }
+
+    public function getCategoryId($post_category){
+        $post_category = Post_Category::where('name_slug','like',$post_category)->get();
+        return $post_category->first();
     }
 }

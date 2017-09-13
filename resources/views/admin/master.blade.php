@@ -129,7 +129,7 @@
                 </li>
                 <li >
                     <a href="javascript:;" data-toggle="collapse" data-target="#ul2">
-                        <i class="fa fa-fw fa-header"></i> Banner <i class="fa fa-fw fa-caret-down"></i>
+                        <i class="fa fa-fw fa-picture-o"></i> Banner <i class="fa fa-fw fa-caret-down"></i>
                     </a>
                     <ul id="ul2" class="collapse">
                         <li>
@@ -142,7 +142,7 @@
                 </li>
                 <li>
                     <a href="{{ url('admin/intro') }}">
-                        <i class="fa fa-fw fa-th"></i> Giới thiệu
+                        <i class="fa fa-fw fa-briefcase"></i> Giới thiệu
                     </a>
                 </li>
                 <li>
@@ -160,12 +160,17 @@
                 </li>
                 <li>
                     <a href="{{ url('admin/review') }}">
-                        <i class="fa fa-fw fa-th"></i> Ý kiến khách hàng
+                        <i class="fa fa-fw fa-commenting"></i> Ý kiến khách hàng
                     </a>
                 </li>
                 <li>
                     <a href="{{ url('admin/question') }}">
-                        <i class="fa fa-fw fa-th"></i> Câu hỏi thường gặp
+                        <i class="fa fa-fw fa-question-circle"></i> Câu hỏi thường gặp
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('admin/footer') }}">
+                        <i class="fa fa-fw fa-phone-square"></i> Footer
                     </a>
                 </li>
             </ul>

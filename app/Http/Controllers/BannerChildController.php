@@ -19,6 +19,11 @@ class BannerChildController extends Controller
         $data['banner'] = $banner;
         return view('admin.banner-child',$data);
     }
+    
+    public function getBannerChild(){
+        $banner_child = $this->banner_child->getBannerChild();
+        return $banner_child;
+    }
 
     public function update(EditBannerChildRequest $request){
         $flag = $this->banner_child->updateBannerChild($request);

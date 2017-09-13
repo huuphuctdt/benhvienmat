@@ -3492,36 +3492,36 @@
         return n
     })
 }, function (t, e) {
-    (function (t) {
-        "use strict";
-        function e(e) {
-            var i = e, n = jQuery(".header-inner").width();
-            if (n < 750)return !1;
-            var o = Math.max(document.documentElement.clientWidth, window.innerWidth || 0), r = i.offset().left - (o - n) / 2;
-            t.flatsomeVars.rtl && (r = jQuery(window).width() - (i.offset().left + i.outerWidth()) - (o - n) / 2);
-            var s = i.width(), a = n - (r + s), l = !1;
-            r > a && r < s && (l = (r + a) / 3), a < 0 && (l = -a), l && t.flatsomeVars.rtl ? i.css("margin-right", -l) : l && i.css("margin-left", -l), s > n && i.addClass("nav-dropdown-full")
-        }
-
-        Flatsome.behavior("dropdown", {
-            attach: function (t) {
-                jQuery(".nav li.has-dropdown", t).each(function (t, i) {
-                    var n = jQuery(i), o = !1, r = !1;
-                    n.on("touchstart click", function (t) {
-                        "touchstart" === t.type && (o = !0), "click" === t.type && o && (o && !r && t.preventDefault(), r = !0)
-                    }), n.hoverIntent({
-                        sensitivity: 3, interval: 20, timeout: 70, over: function (t) {
-                            n.addClass("current-dropdown"), e(n.find(".nav-dropdown"))
-                        }, out: function () {
-                            r = !1, o = !1, n.find(".nav-dropdown").attr("style", ""), n.removeClass("current-dropdown")
-                        }
-                    })
-                })
-            }
-        })
-    }).call(e, function () {
-        return this
-    }())
+    // (function (t) {
+    //     "use strict";
+    //     function e(e) {
+    //         var i = e, n = jQuery(".header-inner").width();
+    //         if (n < 750)return !1;
+    //         var o = Math.max(document.documentElement.clientWidth, window.innerWidth || 0), r = i.offset().left - (o - n) / 2;
+    //         t.flatsomeVars.rtl && (r = jQuery(window).width() - (i.offset().left + i.outerWidth()) - (o - n) / 2);
+    //         var s = i.width(), a = n - (r + s), l = !1;
+    //         r > a && r < s && (l = (r + a) / 3), a < 0 && (l = -a), l && t.flatsomeVars.rtl ? i.css("margin-right", -l) : l && i.css("margin-left", -l), s > n && i.addClass("nav-dropdown-full")
+    //     }
+    //
+    //     Flatsome.behavior("dropdown", {
+    //         attach: function (t) {
+    //             jQuery(".nav li.has-dropdown", t).each(function (t, i) {
+    //                 var n = jQuery(i), o = !1, r = !1;
+    //                 n.on("touchstart click", function (t) {
+    //                     "touchstart" === t.type && (o = !0), "click" === t.type && o && (o && !r && t.preventDefault(), r = !0)
+    //                 }), n.hoverIntent({
+    //                     sensitivity: 3, interval: 20, timeout: 70, over: function (t) {
+    //                         n.addClass("current-dropdown"), e(n.find(".nav-dropdown"))
+    //                     }, out: function () {
+    //                         r = !1, o = !1, n.find(".nav-dropdown").attr("style", ""), n.removeClass("current-dropdown")
+    //                     }
+    //                 })
+    //             })
+    //         }
+    //     })
+    // }).call(e, function () {
+    //     return this
+    // }())
 }, function (t, e) {
     "use strict";
     Flatsome.behavior("lightbox-gallery", {

@@ -21,6 +21,11 @@ class QuestionController extends Controller
         $data['questions'] = $questions;
         return view('admin.question',$data);
     }
+    
+    public function getAllQuestion(){
+        $questions = $this->question->getQuestion();
+        return $questions;
+    }
 
     public function create(){
         return view('admin.question-create');

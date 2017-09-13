@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-});
+Route::get('/', 'MasterController@index');
 
 Route::post('upload-test','PostController@test');
 
@@ -74,4 +72,10 @@ Route::prefix('admin')->group(function () {
     Route::post('question/delete','QuestionController@delete');
     Route::get('question/{id}','QuestionController@edit');
     Route::post('question/edit','QuestionController@save_edit');
+
+    Route::get('/footer', 'FooterController@index');
+    Route::post('footer/update', 'FooterController@update');
 });
+
+Route::get('/{post_category}/','MasterController@post');
+Route::get('/{category}/{title}.html', 'MasterController@post_detail');

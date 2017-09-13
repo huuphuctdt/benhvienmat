@@ -36,15 +36,15 @@
                 <div class="col medium-4 small-12 large-4">
                     <div class="col-inner" style="padding:0px 0px 0 0px;margin:0px 0px 0px 0;">
                         <h3><span style="font-size: 130%; color: #ffffff;">LIÊN HỆ</span></h3>
-                        <p class="po-contact"><i class="fa fa-map-marker"></i> 17i Ung Văn Khiêm, P. Đông Xuyên, <br>Tp Long Xuyên, Tỉnh An Giang</p>
-                        <p class="po-contact"><i class="fa fa-phone"></i><a href="tel:02963522888"> (+029) 6352 2888</a></p>
-                        <p class="po-contact"><i class="fa fa-envelope"></i><a href="mailto:test@gmail.com"> test@gmail.com</a></p>
+                        <p class="po-contact"><i class="fa fa-map-marker"></i> {{ $footer->address }}</p>
+                        <p class="po-contact"><i class="fa fa-phone"></i><a href="tel:02963522888"> {{ $footer->phone }}</a></p>
+                        <p class="po-contact"><i class="fa fa-envelope"></i><a href="mailto:{{ $footer->gmail }}"> {{ $footer->gmail }}</a></p>
                     </div>
                     <div class="social-icons">
-                        <a href="#" target="_blank" class="fa fa-facebook" title="facebook"></a>
-                        <a href="#" target="_blank" class="fa fa-twitter" title="twitter"></a>
-                        <a href="#" target="_blank" class="fa fa-linkedin" title="linkedin"></a>
-                        <a href="#" target="_blank" class="fa fa-google-plus" title="google-plus"></a>
+                        <a href="{{ $footer->facebook }}" target="_blank" class="fa fa-facebook" title="facebook"></a>
+                        <a href="{{ $footer->twitter }}" target="_blank" class="fa fa-twitter" title="twitter"></a>
+                        <a href="{{ $footer->linkedin }}" target="_blank" class="fa fa-linkedin" title="linkedin"></a>
+                        <a href="{{ $footer->google_plus }}" target="_blank" class="fa fa-google-plus" title="google-plus"></a>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
         <div class="container clearfix">
             <div class="footer-primary pull-left">
                 <div class="copyright-footer">
-                    <p style="text-align: center; color: white">Copyright © 2017. All rights reserved</p>
+                    <p style="text-align: center; color: white">{{ $footer->copy_right }}</p>
                 </div>
             </div><!-- .left -->
         </div><!-- .container -->

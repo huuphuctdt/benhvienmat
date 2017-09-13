@@ -16,7 +16,7 @@ class MenuController extends Controller
         $this->menu = new Menu();
     }
 
-    public function getAllMenu(){
+    public function getAllMenuAdmin(){
         $menus = $this->menu->getMenuAdmin();
         return $menus;
     }

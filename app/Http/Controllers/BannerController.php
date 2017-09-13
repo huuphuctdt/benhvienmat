@@ -20,6 +20,11 @@ class BannerController extends Controller
         return view('admin.banner',$data);
     }
 
+    public function getBanner(){
+        $banner = $this->banner->getBanner();
+        return $banner;
+    }
+    
     public function update(EditBannerRequest $request){
         $flag = $this->banner->updateBanner($request);
         if($flag){

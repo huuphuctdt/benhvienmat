@@ -1,4 +1,4 @@
-<div class="banner has-hover hide-for-medium has-parallax" id="banner-931260212">
+<div class="banner has-hover has-parallax" id="banner-931260212">
     <div class="banner-inner fill">
         <div class="banner-bg fill" data-parallax="-2" data-parallax-container=".banner" data-parallax-background>
             <div class="bg fill bg-fill "></div>
@@ -9,7 +9,7 @@
             <div class="img has-hover x0 md-x0 lg-x0 y20 md-y20 lg-y20" id="image_950548564">
                 <div data-animate="fadeInDown">    <div class="img-inner dark" >
                         <img width="937" height="238"
-                             src="{{ url('images/text_home.png') }}"
+                             src="{{ url('images/'.$banner_child->image) }}"
                              class="attachment-large size-large" alt="" sizes="(max-width: 937px) 100vw, 937px" />
                     </div>
                 </div>
@@ -30,7 +30,7 @@
             padding-top: 50%;
         }
         #banner-931260212 .bg.bg-loaded {
-            background-image: url({{ url('images/benhvien.jpg') }});
+            background-image: url({{ url('images/',$banner->image) }});
         }
     </style>
 </div>

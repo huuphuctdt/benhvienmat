@@ -30,11 +30,6 @@ class PostController extends Controller
         return $posts;
     }
 
-    public function getTop2Post(){
-        $posts = $this->post->getTop2Post();
-        return $posts;
-    }
-
     public function getAllPostCategory($category){
         $posts = $this->post->getPostCategory($category);
         return $posts;

@@ -23,6 +23,11 @@ class ReviewController extends Controller
         $data['reviews'] = $reviews;
         return view('admin.review',$data);
     }
+    
+    public function getAllReview(){
+        $reviews = $this->review->getReview();
+        return $reviews;
+    }
 
     public function create(){
         return view('admin.review-create');

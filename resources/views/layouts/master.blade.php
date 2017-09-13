@@ -183,19 +183,29 @@
         });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    @if($menus != null)
+        @include('user.header')
+    @endif
 
-    @include('user.header')
+    @if(!empty($id))
+        @include('user.post-detail')
+    @elseif(!empty($post))
+        @include('user.post')
+    @else
+        <main id="main" class="">
+            <div id="content" role="main" class="content-area">
+                @include('user.banner')
+                @include('user.intro')
+                @include('user.services')
+                @include('user.review-customer')
+                @include('user.question')
+            </div>
+        </main><!-- #main -->
+    @endif
+    @if($footer != null)
+        @include('user.footer')
+    @endif
 
-    <main id="main" class="">
-        <div id="content" role="main" class="content-area">
-            @include('user.banner')
-            @include('user.intro')
-            @include('user.services')
-            @include('user.review-customer')
-            @include('user.question')
-        </div>
-    </main><!-- #main -->
-    @include('user.footer')
 
 </div><!-- #wrapper -->
 
