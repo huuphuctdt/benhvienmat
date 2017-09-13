@@ -20,8 +20,8 @@ class IntroController extends Controller
         return view('admin.intro',$data);
     }
 
-    public function getIntro(){
-        $intro = $this->intro->getIntro();
+    public function getIntroAdmin(){
+        $intro = $this->intro->getIntroAdmin();
         return $intro;
     }
 

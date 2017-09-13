@@ -24,8 +24,8 @@ class ReviewController extends Controller
         return view('admin.review',$data);
     }
     
-    public function getAllReview(){
-        $reviews = $this->review->getReview();
+    public function getAllReviewAdmin(){
+        $reviews = $this->review->getReviewAdmin();
         return $reviews;
     }
 

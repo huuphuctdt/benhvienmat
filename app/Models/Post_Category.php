@@ -19,6 +19,15 @@ class Post_Category extends Model
         return $postCategory;
     }
 
+    public function getPostCategoryAdmin(){
+        $postCategory = Post_Category::all();
+        $admin_show = Admin_Show::where('menu_eng','like','%services%')->first();
+        if($admin_show->is_show == 1){
+            return $postCategory;
+        }
+        return;
+    }
+
     public function createPostCategory($request){
         if($request->hasFile('image')){
             $file= $request->file('image');

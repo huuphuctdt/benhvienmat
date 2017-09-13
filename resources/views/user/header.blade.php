@@ -81,7 +81,12 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="html custom html_topbar_left"><h3 style="font-size: 16px; color: #06b4af; margin-bottom: 0px"><strong>(+029) 63522888</strong></h3></li>
+                        <li class="html custom html_topbar_left"><h3 style="font-size: 16px; color: #06b4af; margin-bottom: 0px"><strong><a href="tel:02963522888">(+029) 63522888</a></strong></h3></li>
+                        <li>
+                            <div><a href="#googtrans(en|en)" class="lang-en lang-select" data-lang="en"><img src="{{ url('images/flag-eng.png') }}" width="25" height="25" alt="USA"></a></div>
+                            </li><li>
+                            <div><a href="#googtrans(en|vi)" class="lang-es lang-select" data-lang="vi"><img src="{{ url('images/flag-vietnam.png') }}" width="25" height="25" alt="VIETNAM"></a></div>
+                        </li>
                     </ul>
                 </div><!-- flex-col -->
             </div><!-- .flex-row -->
@@ -90,6 +95,56 @@
         <div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div><!-- .header-bg-container -->
     </div><!-- header-wrapper-->
 </header>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'vi', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    }
+
+    function triggerHtmlEvent(element, eventName) {
+        var event;
+        if (document.createEvent) {
+            event = document.createEvent('HTMLEvents');
+            event.initEvent(eventName, true, true);
+            element.dispatchEvent(event);
+        } else {
+            event = document.createEventObject();
+            event.eventType = eventName;
+            element.fireEvent('on' + event.eventType, event);
+        }
+    }
+    function setcookie(name, value, days)
+    {
+        if (days)
+        {
+            var date = new Date();
+            date.setTime(date.getTime()+days*24*60*60*1000); // ) removed
+            var expires = "; expires=" + date.toGMTString(); // + added
+        }
+        else
+            var expires = "";
+        document.cookie = name+"=" + value+expires + ";path=/"; // + and " added
+    }
+    function del_cookie(name) {
+        document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+    }
+    jQuery(document).ready(function () {
+        setcookie("test", "123123",30);
+        jQuery('.lang-select').click(function() {
+            var theLang = jQuery(this).attr('data-lang');
+            jQuery('.goog-te-combo').val(theLang);
+
+            if(theLang == 'vi'){
+//                setcookie("googtrans", "/en/vi",30);
+                del_cookie("test");
+            }
+            //alert(jQuery(this).attr('href'));
+            window.location = jQuery(this).attr('href');
+            location.reload();
+            del_cookie("test");
+        });
+    });
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <!-- Mobile Sidebar -->
 <div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">

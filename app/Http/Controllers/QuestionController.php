@@ -22,8 +22,8 @@ class QuestionController extends Controller
         return view('admin.question',$data);
     }
     
-    public function getAllQuestion(){
-        $questions = $this->question->getQuestion();
+    public function getAllQuestionAdmin(){
+        $questions = $this->question->getQuestionAdmin();
         return $questions;
     }
 

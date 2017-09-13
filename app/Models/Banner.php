@@ -15,6 +15,15 @@ class Banner extends Model
         return $banner->first();
     }
 
+    public function getBannerAdmin(){
+        $banner = Banner::all();
+        $admin_show = Admin_Show::where('menu_eng','like','%banner%')->first();
+        if($admin_show->is_show == 1){
+            return $banner->first();
+        }
+        return;
+    }
+
     public function updateBanner($request){
         if($request->hasFile('logo')){
             $image_old = Banner::find($request->po_banner_id)->image;

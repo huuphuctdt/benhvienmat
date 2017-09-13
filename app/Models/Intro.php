@@ -15,6 +15,15 @@ class Intro extends Model
         return $intro->first();
     }
 
+    public function getIntroAdmin(){
+        $intro = Intro::all();
+        $admin_show = Admin_Show::where('menu_eng','like','%intro%')->first();
+        if($admin_show->is_show == 1){
+            return $intro->first();
+        }
+        return;
+    }
+
     public function updateIntro($request){
         if($request->hasFile('logo')){
             $image_old = Intro::find($request->po_intro_id)->image;

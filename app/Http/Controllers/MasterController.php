@@ -42,12 +42,12 @@ class MasterController extends Controller
     public function index(){
         $logo = $this->logoController->getLogoAdmin();
         $menus = $this->menuController->getAllMenuAdmin();
-        $banner = $this->bannerController->getBanner();
+        $banner = $this->bannerController->getBannerAdmin();
         $banner_child = $this->bannerChildController->getBannerChild();
-        $intro = $this->introController->getIntro();
-        $post_categorys = $this->postCategoryController->getAllCategory();
-        $reviews = $this->reviewController->getAllReview();
-        $questions  = $this->questionController->getAllQuestion();
+        $intro = $this->introController->getIntroAdmin();
+        $post_categorys = $this->postCategoryController->getAllCategoryAdmin();
+        $reviews = $this->reviewController->getAllReviewAdmin();
+        $questions  = $this->questionController->getAllQuestionAdmin();
         $footer = $this->footerController->getFooterAdmin();
         $data['logo'] = $logo;
         $data['menus'] = $menus;
@@ -62,9 +62,9 @@ class MasterController extends Controller
     }
 
     public function post($post_category){
-        $logo = $this->logoController->getLogo();
-        $menus = $this->menuController->getAllMenu();
-        $footer = $this->footerController->getFooter();
+        $logo = $this->logoController->getLogoAdmin();
+        $menus = $this->menuController->getAllMenuAdmin();
+        $footer = $this->footerController->getFooterAdmin();
         $post = $this->postCategoryController->getCategoryId($post_category);
         $data['footer'] = $footer;
         $data['logo'] = $logo;
@@ -77,9 +77,9 @@ class MasterController extends Controller
         $id = array_first(explode('.',array_last(explode('-',$title))));
         $post = $this->postCategoryController->getCategoryId($category);
         $post_detail = $this->postController->getPostDetail($id);
-        $logo = $this->logoController->getLogo();
-        $menus = $this->menuController->getAllMenu();
-        $footer = $this->footerController->getFooter();
+        $logo = $this->logoController->getLogoAdmin();
+        $menus = $this->menuController->getAllMenuAdmin();
+        $footer = $this->footerController->getFooterAdmin();
         $data['post_detail'] = $post_detail;
         $data['footer'] = $footer;
         $data['logo'] = $logo;

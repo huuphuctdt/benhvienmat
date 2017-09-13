@@ -173,6 +173,11 @@
                         <i class="fa fa-fw fa-phone-square"></i> Footer
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('admin/admin-show') }}">
+                        <i class="fa fa-fw fa-eye"></i> Hiển thị
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

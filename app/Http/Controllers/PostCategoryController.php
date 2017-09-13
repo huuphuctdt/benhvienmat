@@ -24,8 +24,8 @@ class PostCategoryController extends Controller
         return view('admin.postcategory',$data);
     }
 
-    public function getAllCategory(){
-        $post_category = $this->post_category->getPostCategory();
+    public function getAllCategoryAdmin(){
+        $post_category = $this->post_category->getPostCategoryAdmin();
         return $post_category;
     }
 

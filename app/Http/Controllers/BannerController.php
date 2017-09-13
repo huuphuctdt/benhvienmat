@@ -20,8 +20,8 @@ class BannerController extends Controller
         return view('admin.banner',$data);
     }
 
-    public function getBanner(){
-        $banner = $this->banner->getBanner();
+    public function getBannerAdmin(){
+        $banner = $this->banner->getBannerAdmin();
         return $banner;
     }
     

@@ -15,6 +15,15 @@ class Review extends Model
         return $reviews;
     }
 
+    public function getReviewAdmin(){
+        $reviews = Review::all();
+        $admin_show = Admin_Show::where('menu_eng','like','%reviews%')->first();
+        if($admin_show->is_show == 1){
+            return $reviews;
+        }
+        return;
+    }
+
     public function getId($id){
         $review = Review::find($id);
         return $review;

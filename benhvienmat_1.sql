@@ -98,26 +98,7 @@ INSERT INTO `banner_child` (`id`, `image`, `link`, `created_at`, `updated_at`) V
 -- Table structure for table `footer`
 --
 
-CREATE TABLE `footer` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gmail` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `facebook` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `twitter` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `linkedin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `google_plus` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `copy_right` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `footer`
---
-
-INSERT INTO `footer` (`id`, `address`, `phone`, `gmail`, `facebook`, `twitter`, `linkedin`, `google_plus`, `copy_right`, `created_at`, `updated_at`) VALUES
-(1, '17i Ung Văn Khiêm, P. Đông Xuyên, Tp Long Xuyên, Tỉnh An Giang.', '(+029) 6352 2888', 'test@gmail.com', 'https://www.facebook.com/', 'https://twitter.com/', 'https://www.linkedin.com/', 'https://plus.google.com/', 'Copyright © 2017. All rights reserved.', '2017-09-12 17:00:00', '2017-09-13 01:31:20');
 
 -- --------------------------------------------------------
 

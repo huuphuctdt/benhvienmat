@@ -11,20 +11,12 @@
 |
 */
 
+Auth::routes();
 Route::get('/', 'MasterController@index');
 
-Route::post('upload-test','PostController@test');
-
+Route::group(['middleware' => 'auth'], function () {
 Route::prefix('admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin.master');
-    });
-
-    Route::get('/test', function () {
-        $a = \App\Models\Post::orderBy('created_at','desc')->get();
-        $data['a'] = $a->first();
-        return view('admin.test', $data);
-    });
+    Route::get('/', 'LogoController@index');
 
     Route::get('/logo', 'LogoController@index');
     Route::post('logo/update', 'LogoController@update');
@@ -75,7 +67,13 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/footer', 'FooterController@index');
     Route::post('footer/update', 'FooterController@update');
+
+    //Admin Show
+    Route::get('admin-show','AdminShowController@index');
+    Route::post('change-is-show','AdminShowController@change_isShow');
+    });
 });
 
 Route::get('/{post_category}/','MasterController@post');
 Route::get('/{category}/{title}.html', 'MasterController@post_detail');
+

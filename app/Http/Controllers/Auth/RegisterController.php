@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -48,9 +48,18 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'email' => 'required|string|email|max:255|unique:users,email',
+            'password' => 'required|string|min:6',
+            'confirm' => 'same:password',
+        ],[
+            'email.required' => 'Email buộc phải nhập!',
+            'email.email' => 'Email không đúng định dạng!',
+            'email.max' => 'Email tối đa có 255 ký tự!',
+            'email.unique' => 'Email đã tồn tại trong hệ thống!',
+            'email.string' => 'Email phải là dạng chuỗi!',
+            'password.required' => 'Mật khẩu buộc phải nhập!',
+            'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự!',
+            'confirm.same' => 'Mật khẩu xác nhận không giống mật khẩu!'
         ]);
     }
 
@@ -63,7 +72,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'name' => 'admin',
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

@@ -14,6 +14,15 @@ class Question extends Model
         return $questions;
     }
 
+    public function getQuestionAdmin(){
+        $questions = Question::all();
+        $admin_show = Admin_Show::where('menu_eng','like','%questions%')->first();
+        if($admin_show->is_show == 1){
+            return $questions;
+        }
+        return;
+    }
+
     public function createQuestion($request){
         $flag = Question::create([
             'name' => trim($request->name),
