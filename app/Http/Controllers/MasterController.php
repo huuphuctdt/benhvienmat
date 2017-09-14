@@ -16,6 +16,7 @@ class MasterController extends Controller
     private $questionController;
     private $footerController;
     private $postController;
+    private $promotionController;
     public function __construct(LogoController $logoController,
                                 MenuController $menuController,
                                 BannerController $bannerController,
@@ -25,7 +26,8 @@ class MasterController extends Controller
                                 ReviewController $reviewController,
                                 QuestionController $questionController,
                                 FooterController $footerController,
-                                PostController $postController)
+                                PostController $postController,
+                                PromotionController $promotionController)
     {
         $this->logoController = $logoController;
         $this->menuController = $menuController;
@@ -37,6 +39,7 @@ class MasterController extends Controller
         $this->questionController = $questionController;
         $this->footerController = $footerController;
         $this->postController = $postController;
+        $this->promotionController = $promotionController;
     }
 
     public function index(){
@@ -49,6 +52,7 @@ class MasterController extends Controller
         $reviews = $this->reviewController->getAllReviewAdmin();
         $questions  = $this->questionController->getAllQuestionAdmin();
         $footer = $this->footerController->getFooterAdmin();
+        $promotion = $this->promotionController->getPromotionAdmin();
         $data['logo'] = $logo;
         $data['menus'] = $menus;
         $data['banner'] = $banner;
@@ -58,6 +62,7 @@ class MasterController extends Controller
         $data['reviews'] = $reviews;
         $data['questions'] = $questions;
         $data['footer'] = $footer;
+        $data['promotion'] = $promotion;
         return view('layouts.master',$data);
     }
 
@@ -65,11 +70,13 @@ class MasterController extends Controller
         $logo = $this->logoController->getLogoAdmin();
         $menus = $this->menuController->getAllMenuAdmin();
         $footer = $this->footerController->getFooterAdmin();
+        $promotion = $this->promotionController->getPromotionAdmin();
         $post = $this->postCategoryController->getCategoryId($post_category);
         $data['footer'] = $footer;
         $data['logo'] = $logo;
         $data['menus'] = $menus;
         $data['post'] = $post;
+        $data['promotion'] = $promotion;
         return view('layouts.master',$data);
     }
 
@@ -80,12 +87,31 @@ class MasterController extends Controller
         $logo = $this->logoController->getLogoAdmin();
         $menus = $this->menuController->getAllMenuAdmin();
         $footer = $this->footerController->getFooterAdmin();
+        $promotion = $this->promotionController->getPromotionAdmin();
         $data['post_detail'] = $post_detail;
         $data['footer'] = $footer;
         $data['logo'] = $logo;
         $data['menus'] = $menus;
         $data['post'] = $post;
         $data['id'] = $id;
+        $data['promotion'] = $promotion;
+        return view('layouts.master',$data);
+    }
+
+    public function search(Request $request){
+        $keyword = $request->s;
+        $post_search = $this->postController->getPostSearch($keyword);
+        $post_categorys = $this->postCategoryController->getAllCategoryAdmin();
+        $logo = $this->logoController->getLogoAdmin();
+        $menus = $this->menuController->getAllMenuAdmin();
+        $footer = $this->footerController->getFooterAdmin();
+        $promotion = $this->promotionController->getPromotionAdmin();
+        $data['post_search'] = $post_search;
+        $data['logo'] = $logo;
+        $data['menus'] = $menus;
+        $data['footer'] = $footer;
+        $data['promotion'] = $promotion;
+        $data['post_categorys'] = $post_categorys;
         return view('layouts.master',$data);
     }
 }

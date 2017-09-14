@@ -66,7 +66,8 @@
 
                             <div id="search-lightbox" class="mfp-hide dark text-center">
                                 <div class="searchform-wrapper ux-search-box relative form-flat is-large">
-                                    <form method="get" class="searchform" action="#" role="search">
+                                    <form method="post" class="searchform" action="{{ url('search')  }}" role="search">
+                                        {{ csrf_field() }}
                                         <div class="flex-row relative">
                                             <div class="flex-col flex-grow">
                                                 <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Search&hellip;" />
@@ -83,8 +84,9 @@
                         </li>
                         <li class="html custom html_topbar_left"><h3 style="font-size: 16px; color: #06b4af; margin-bottom: 0px"><strong><a href="tel:02963522888">(+029) 63522888</a></strong></h3></li>
                         <li>
-                            <div><a href="#googtrans(en|en)" class="lang-en lang-select" data-lang="en"><img src="{{ url('images/flag-eng.png') }}" width="25" height="25" alt="USA"></a></div>
-                            </li><li>
+                            <div><a href="#googtrans(vi|en)" class="lang-en lang-select" data-lang="en"><img src="{{ url('images/flag-eng.png') }}" width="25" height="25" alt="USA"></a></div>
+                        </li>
+                        <li>
                             <div><a href="#googtrans(en|vi)" class="lang-es lang-select" data-lang="vi"><img src="{{ url('images/flag-vietnam.png') }}" width="25" height="25" alt="VIETNAM"></a></div>
                         </li>
                     </ul>
@@ -112,35 +114,73 @@
             element.fireEvent('on' + event.eventType, event);
         }
     }
-    function setcookie(name, value, days)
-    {
-        if (days)
-        {
-            var date = new Date();
-            date.setTime(date.getTime()+days*24*60*60*1000); // ) removed
-            var expires = "; expires=" + date.toGMTString(); // + added
+    function setCookie(b, h, c, f, e) {
+        var a;
+        if (c === 0) {
+            a = "";
+        } else {
+            var g = new Date();
+            g.setTime(g.getTime() + (c * 24 * 60 * 60 * 1000));
+            a = "expires=" + g.toGMTString() + "; "
         }
-        else
-            var expires = "";
-        document.cookie = name+"=" + value+expires + ";path=/"; // + and " added
+        var e = (typeof e === "undefined") ? "" : "; domain=" + e;
+        document.cookie = b + "=" + h + "; " + a + "path=" + f + e
     }
-    function del_cookie(name) {
-        document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+
+    function getCookie(d) {
+        var b = d + "=";
+        var a = document.cookie.split(";");
+        for (var e = 0; e < a.length; e++) {
+            var f = a[e].trim();
+            if (f.indexOf(b) == 0) {
+                return f.substring(b.length, f.length)
+            }
+        }
+        return "";
     }
+
+    function downloadJSAtOnload() {
+        var i;
+        var paths = new Array(
+            '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+        );
+        for (i in paths) {
+            if (typeof paths[i] !== 'string') {
+                console.log(typeof paths[i]);
+                continue;
+            }
+            var element = document.createElement("script");
+            element.src = paths[i];
+            document.body.appendChild(element);
+        }
+    }
+
     jQuery(document).ready(function () {
-        setcookie("test", "123123",30);
+
         jQuery('.lang-select').click(function() {
+
             var theLang = jQuery(this).attr('data-lang');
             jQuery('.goog-te-combo').val(theLang);
 
             if(theLang == 'vi'){
-//                setcookie("googtrans", "/en/vi",30);
-                del_cookie("test");
+                setCookie("googtrans", "/en/vi", 0, "/", ".benhvienmat.local");
+                setCookie("googtrans", "/en/vi", 0, "/");
+            }else{
+                setCookie("googtrans", "/vi/en", 0, "/", ".benhvienmat.local");
+                setCookie("googtrans", "/vi/en", 0, "/");
             }
-            //alert(jQuery(this).attr('href'));
+
+            var googTrans = getCookie('googtrans');
+
+            if (googTrans === '/vi/en') {
+                downloadJSAtOnload();
+//                var src = $('#lang-change-en > img').attr('src').replace('flag_en.png', 'flag_es.gif');
+//                $('#lang-change-en > img').attr('src', src);
+//                $('#lang-change-en').attr('id', 'lang-change-es');
+            }
+
             window.location = jQuery(this).attr('href');
             location.reload();
-            del_cookie("test");
         });
     });
 </script>
@@ -153,16 +193,15 @@
             <li class="header-search-form search-form html relative has-icon">
                 <div class="header-search-form-wrapper">
                     <div class="searchform-wrapper ux-search-box relative form-flat is-normal">
-                        <form method="get" class="searchform" action="#" role="search">
+                        <form method="post" class="searchform" action="{{ url('search')  }}" role="search">
+                            {{ csrf_field() }}
                             <div class="flex-row relative">
                                 <div class="flex-col flex-grow">
-                                    <input type="search" class="search-field mb-0" name="s" value="" id="s"
-                                           placeholder="Tìm kiếm&hellip;"/>
+                                    <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Search&hellip;" />
                                 </div><!-- .flex-col -->
                                 <div class="flex-col">
-                                    <button type="submit"
-                                            class="ux-search-submit submit-button secondary button icon mb-0">
-                                        <i class="icon-search"></i></button>
+                                    <button type="submit" class="ux-search-submit submit-button secondary button icon mb-0">
+                                        <i class="icon-search" ></i>				</button>
                                 </div><!-- .flex-col -->
                             </div><!-- .flex-row -->
                             <div class="live-search-results text-left z-top"></div>

@@ -71,9 +71,13 @@ Route::prefix('admin')->group(function () {
     //Admin Show
     Route::get('admin-show','AdminShowController@index');
     Route::post('change-is-show','AdminShowController@change_isShow');
+
+    Route::get('promotion','PromotionController@index');
+    Route::post('promotion/update','PromotionController@update');
     });
 });
 
 Route::get('/{post_category}/','MasterController@post');
 Route::get('/{category}/{title}.html', 'MasterController@post_detail');
+Route::post('search','MasterController@search');
 

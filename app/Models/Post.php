@@ -74,4 +74,9 @@ class Post extends Model
         $posts = Post::orderBy('created_at', 'desc')->offset(0)->limit(2)->get();
         return $posts;
     }
+
+    public function getPostSearch($keyword){
+        $posts = Post::where('name','like',"%".$keyword."%")->orWhere('content','like',"%".$keyword."%")->paginate(9);
+        return $posts;
+    }
 }

@@ -45,6 +45,11 @@ class PostController extends Controller
         return $post;
     }
 
+    public function getPostSearch($keyword){
+        $posts = $this->post->getPostSearch($keyword);
+        return $posts;
+    }
+
     public function create(){
         $post_categorys = $this->post_category->getPostCategory();
         $data['post_categorys'] = $post_categorys;

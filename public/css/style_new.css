@@ -661,3 +661,24 @@ body {
 li.html_topbar_left a{
     color: #06b4af;
 }
+#close-div-promotion:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+    color:#fff;
+    cursor: pointer;
+}
+
+#div-promotion{
+    position:fixed; width: 250px; height:250px;bottom:0;left:0;z-index: 99999;
+}
+#div-promotion img{
+    width: 100%; height: auto;
+}
+#div-promotion iframe{
+    width: 100%; height: 100%;
+}
+#close-div-promotion{
+    float:right;display:inline-block;padding:2px 5px;background:#000000;color:#ffffff;font-weight:bold;
+}

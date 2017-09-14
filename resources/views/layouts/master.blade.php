@@ -21,59 +21,25 @@
     <![endif]-->
     {{--<script src="{{ asset('/js/app.js') }}"></script>--}}
     <link rel="icon" href="{{ url('images/logo.jpg') }}" sizes="32x32" />
-    <style>
-
-    </style>
+    <?php include resource_path('views/layouts/googleanalytics.php'); ?>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/59ba41cc4854b82732feff95/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </head>
 
 <body class="home page-template page-template-page-blank page-template-page-blank-php page page-id-4 header-shadow lightbox nav-dropdown-has-arrow">
-{{--<a class="skip-link screen-reader-text" href="#main">Skip to content</a>--}}
 
 <div id="wrapper">
-
-    {{--<div class="ct-topbar">--}}
-        {{--<div class="container">--}}
-            {{--<ul class="list-unstyled list-inline ct-topbar__list">--}}
-                {{--<li class="ct-language">Language <i class="fa fa-arrow-down"></i>--}}
-                    {{--<ul class="list-unstyled ct-language__dropdown">--}}
-                        {{--<li><a href="#googtrans(en|en)" class="lang-en lang-select" data-lang="en"><img src="{{ url('images/flag-eng.png') }}" width="25" height="25" alt="USA"></a></li>--}}
-                        {{--<li><a href="#googtrans(en|vi)" class="lang-es lang-select" data-lang="vi"><img src="https://www.solodev.com/assets/google-translate/flag-vietnam.png" alt="VIETNAM"></a></li>--}}
-                    {{--</ul>--}}
-                {{--</li>--}}
-            {{--</ul>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-
-    {{--<script type="text/javascript">--}}
-        {{--function googleTranslateElementInit() {--}}
-            {{--new google.translate.TranslateElement({pageLanguage: 'vi', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');--}}
-        {{--}--}}
-
-        {{--function triggerHtmlEvent(element, eventName) {--}}
-            {{--var event;--}}
-            {{--if (document.createEvent) {--}}
-                {{--event = document.createEvent('HTMLEvents');--}}
-                {{--event.initEvent(eventName, true, true);--}}
-                {{--element.dispatchEvent(event);--}}
-            {{--} else {--}}
-                {{--event = document.createEventObject();--}}
-                {{--event.eventType = eventName;--}}
-                {{--element.fireEvent('on' + event.eventType, event);--}}
-            {{--}--}}
-        {{--}--}}
-
-        {{--jQuery('.lang-select').click(function() {--}}
-            {{--var theLang = jQuery(this).attr('data-lang');--}}
-            {{--jQuery('.goog-te-combo').val(theLang);--}}
-
-            {{--//alert(jQuery(this).attr('href'));--}}
-            {{--window.location = jQuery(this).attr('href');--}}
-            {{--location.reload();--}}
-
-        {{--});--}}
-    {{--</script>--}}
-    {{--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>--}}
     @if($menus != null)
         @include('user.header')
     @endif
@@ -82,6 +48,8 @@
         @include('user.post-detail')
     @elseif(!empty($post))
         @include('user.post')
+    @elseif(!empty($post_search))
+        @include('user.search')
     @else
         <main id="main" class="">
             <div id="content" role="main" class="content-area">
@@ -110,16 +78,13 @@
 
 
 </div><!-- #wrapper -->
-
+@if($promotion != null)
+    @include('user.promotion')
+@endif
 <link rel='stylesheet' id='flatsome-effects-css'  href='{{ asset('/css/effects.css') }}' type='text/css' media='all' />
 <script type='text/javascript' src='{{ asset('/js/scripts.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/flatsome-live-search.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/hoverIntent.min.js') }}'></script>
-{{--<script type='text/javascript'>--}}
-    {{--/* <![CDATA[ */--}}
-    {{--var flatsomeVars = {"ajaxurl":"http:\/\/thammytiensynhan.com\/wp-admin\/admin-ajax.php","rtl":"","sticky_height":"37"};--}}
-    {{--/* ]]> */--}}
-{{--</script>--}}
 <script type='text/javascript' src='{{ asset('/js/flatsome.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/wp-embed.min.js') }}'></script>
 

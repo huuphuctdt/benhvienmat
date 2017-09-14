@@ -74,6 +74,15 @@
             ]
         });
     </script>
+    <style>
+        #modal-body-video iframe{
+            width: 100%;
+            height: 300px;
+        }#modal-body-video img{
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -166,6 +175,11 @@
                 <li>
                     <a href="{{ url('admin/question') }}">
                         <i class="fa fa-fw fa-question-circle"></i> Câu hỏi thường gặp
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('admin/promotion') }}">
+                        <i class="fa fa-fw fa-money"></i> Khuyến mãi
                     </a>
                 </li>
                 <li>
