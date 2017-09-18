@@ -74,6 +74,9 @@ Route::prefix('admin')->group(function () {
 
     Route::get('promotion','PromotionController@index');
     Route::post('promotion/update','PromotionController@update');
+
+    Route::get('user','UserController@index');
+    Route::post('active-user','UserController@active');
     });
 });
 

@@ -123,7 +123,8 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li >
+                @if( Auth::user()->role == 1)
+                <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#ul1">
                         <i class="fa fa-fw fa-header"></i> Header <i class="fa fa-fw fa-caret-down"></i>
                     </a>
@@ -154,6 +155,7 @@
                         <i class="fa fa-fw fa-picture-o"></i> Banner
                     </a>
                 </li>
+                @endif
                 <li>
                     <a href="{{ url('admin/intro') }}">
                         <i class="fa fa-fw fa-briefcase"></i> Giới thiệu
@@ -172,6 +174,7 @@
                         </li>
                     </ul>
                 </li>
+                @if( Auth::user()->role == 1)
                 <li>
                     <a href="{{ url('admin/review') }}">
                         <i class="fa fa-fw fa-commenting"></i> Ý kiến khách hàng
@@ -197,6 +200,12 @@
                         <i class="fa fa-fw fa-eye"></i> Hiển thị
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('admin/user') }}">
+                        <i class="fa fa-fw fa-user"></i> Quản lý người dùng
+                    </a>
+                </li>
+                @endif
             </ul>
         </div>
         <!-- /.navbar-collapse -->

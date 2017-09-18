@@ -26,4 +26,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getUser(){
+        $users = User::all();
+        return $users;
+    }
+
+    public function activeUser($user_id){
+        $user = User::find($user_id);
+        if($user->role == 1) return false;
+        $user->active = !$user->active;
+        $flag = $user->save();
+        return $flag;
+    }
 }
