@@ -21,10 +21,19 @@
         <form class="form-horizontal" action="{{ url('admin/intro/update') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
-                <label class="control-label col-md-2" for="logo">Giới thiệu :</label>
-                <div class="col-md-5 {{ $errors->has('logo') ? ' has-error' : '' }}">
-                    <img src="{{ url('images/'.$intro->image) }}" alt="logo" title="logo" name="file" width="700">
-                    <input type="file" name="logo" class="form-control m-t-20">
+                {{--<label class="control-label col-md-2" for="logo">Giới thiệu :</label>--}}
+                {{--<div class="col-md-5 {{ $errors->has('logo') ? ' has-error' : '' }}">--}}
+                    {{--<img src="{{ url('images/'.$intro->image) }}" alt="logo" title="logo" name="file" width="700">--}}
+                    {{--<input type="file" name="logo" class="form-control m-t-20">--}}
+                    {{--@if ($errors->has('logo'))--}}
+                        {{--<span class="help-block">--}}
+                            {{--<strong>{{ $errors->first('logo') }}</strong>--}}
+                        {{--</span>--}}
+                    {{--@endif--}}
+                {{--</div>--}}
+                <div class="row col-md-offset-2 m-t-20 {{ $errors->has('logo') ? ' has-error' : '' }}">
+                    <label class="control-label" for="image">Nội dung : </label>
+                    <textarea name="logo" class="form-control my-textarea">{!! $intro->image !!}</textarea>
                     @if ($errors->has('logo'))
                         <span class="help-block">
                             <strong>{{ $errors->first('logo') }}</strong>

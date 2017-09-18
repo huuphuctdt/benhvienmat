@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Footer extends Model
 {
     protected $table = 'footer';
-    protected $fillable = ['address','phone','gmail','facebook','twitter','linkedin','google_plus','copy_right'];
+    protected $fillable = ['address','phone','gmail','facebook','twitter','linkedin','google_plus','instagram','chart','copy_right'];
 
     public function getFooter(){
         $footer = Footer::all();
@@ -33,6 +33,8 @@ class Footer extends Model
             'twitter' => $request->twitter,
             'linkedin' => $request->linkedin,
             'google_plus' => $request->google_plus,
+            'instagram' => $request->instagram,
+            'chart' => $request->chart,
             'copy_right' => $request->copy_right]);
         if($flag){
             return true;

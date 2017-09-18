@@ -524,15 +524,15 @@ h1, h2, h3, h4, h5, h6, .heading-font {
 
 
 @media only screen and (max-width: 768px) {
-    #parent_gmap_canvas{
+    #parent_gmap_canvas iframe{
         height:400px;
-        width:290px;
+        width:auto;
     }
 }
-#gmap_canvas{
+#gmap_canvas iframe{
     height:400px;width:100%;
 }
-#gmap_canvas img {
+#gmap_canvas img  {
     max-width: none !important;
     background: none !important
 }

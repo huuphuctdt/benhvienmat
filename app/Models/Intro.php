@@ -24,21 +24,12 @@ class Intro extends Model
         return;
     }
 
-    public function updateIntro($request){
-        if($request->hasFile('logo')){
-            $image_old = Intro::find($request->po_intro_id)->image;
-            File::delete(public_path('images').'/'.$image_old);
-            $file= $request->file('logo');
-            $imageName = time().".".$file->extension();
-            $path = public_path('images');
-            $file->move($path , $imageName);
-            $flag = Intro::query()->update(['image' => $imageName]);
-            if($flag){
-                return true;
-            }else{
-                return false;
-            }
-        }else{
+    public function updateIntro($request)
+    {
+        $flag = Intro::query()->update(['image' => $request->logo]);
+        if ($flag) {
+            return true;
+        } else {
             return false;
         }
     }

@@ -4,7 +4,7 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="vi" class="loading-site no-js"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=25.0, user-scalable=yes" />
     <title>Bệnh Viện Mắt Long Xuyên</title>
     <meta name='robots' content='noindex,follow' />
     <link rel='stylesheet' href="{{ asset('/css/app.css') }}">
@@ -12,7 +12,7 @@
     <link rel='stylesheet' id='font-awesome-four-css'  href='{{ asset('/css/font-awesome.min.css') }}' type='text/css' media='all' />
     <link rel='stylesheet' id='flatsome-icons-css'  href='{{ asset('/css/fl-icons.css') }}' type='text/css' media='all' />
     <link rel='stylesheet' id='flatsome-main-css'  href='{{ asset('/css/flatsome.css') }}' type='text/css' media='all' />
-    <link rel='stylesheet' id='flatsome-style-css'  href='{{ asset('/css/style_new.css') }}' type='text/css' media='all' />
+    <link rel='stylesheet' id='flatsome-style-css'  href='{{ asset('/css/style_new.css?v1.0') }}' type='text/css' media='all' />
     <script type='text/javascript' src='{{ asset('/js/jquery.js') }}'></script>
     <script type='text/javascript' src='{{ asset('/js/jquery-migrate.min.js') }}'></script>
     <!--[if IE]>

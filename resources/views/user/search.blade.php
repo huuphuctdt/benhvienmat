@@ -22,7 +22,7 @@
 
             <div class="large-9 col medium-col-first">
                 <div id="" class="row large-columns-3 medium-columns- small-columns-1 row-masonry" data-packery-options="{&quot;itemSelector&quot;: &quot;.col&quot;, &quot;gutter&quot;: 0, &quot;presentageWidth&quot; : true}" style="position: relative; height: 699.641px;">
-                    @foreach($post_search as $search)
+                    @forelse($post_search as $search)
                         <div class="col post-item">
                         <div class="col-inner">
                             <a href="{{ url($search->post_category->name_slug.'/'.str_slug($search->name).'-'.$search->id.'.html')  }}" class="plain">
@@ -52,7 +52,9 @@
                             </a><!-- .link -->
                         </div><!-- .col-inner -->
                     </div><!-- .col -->
-                    @endforeach
+                    @empty
+                        <div> Không tim thấy với từ khóa</div>
+                    @endforelse
                     {{ $post_search->links() }}
                 </div>
             </div> <!-- .large-9 -->

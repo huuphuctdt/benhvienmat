@@ -23,6 +23,7 @@
                 <article id="post-1313" class="post-1313 post type-post status-publish format-standard hentry">
                     <div class="article-inner ">
                         <div class="entry-content single-page">
+                            <h3 style="text-align: center;">{{ $p->name }}</h3>
                             {!! $p->content !!}
                         </div><!-- .entry-content2 -->
                     </div><!-- .article-inner -->

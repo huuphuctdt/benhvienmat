@@ -91,6 +91,26 @@
                     @endif
                 </div>
                 <div class="clearfix"></div>
+                <label class="control-label col-md-2" for="instagram">Instagram :</label>
+                <div class="col-md-10 {{ $errors->has('instagram') ? ' has-error' : '' }} form-group">
+                    <input type="text" name="instagram" id="instagram" class="form-control" value="{{ $footer->instagram }}">
+                    @if ($errors->has('instagram'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('instagram') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="clearfix"></div>
+                <label class="control-label col-md-2" for="chart">Chart :</label>
+                <div class="col-md-10 {{ $errors->has('chart') ? ' has-error' : '' }} form-group">
+                    <input type="text" name="chart" id="chart" class="form-control" value="{{ $footer->chart }}">
+                    @if ($errors->has('chart'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('chart') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="clearfix"></div>
                 <label class="control-label col-md-2" for="copy_right">Copy Right :</label>
                 <div class="col-md-10 {{ $errors->has('copy_right') ? ' has-error' : '' }} form-group">
                     <input type="text" name="copy_right" id="copy_right" class="form-control" value="{{ $footer->copy_right }}">

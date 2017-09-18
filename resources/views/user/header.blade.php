@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="html custom html_topbar_left"><h3 style="font-size: 16px; color: #06b4af; margin-bottom: 0px"><strong><a href="tel:02963522888">(+029) 63522888</a></strong></h3></li>
+                        <li class="html custom html_topbar_left"><h3 style="font-size: 16px; color: #06b4af; margin-bottom: 0px"><strong><a href="tel:02963515888">(+02963) 515888</a></strong></h3></li>
                         <li>
                             <div><a href="#googtrans(vi|en)" class="lang-en lang-select" data-lang="en"><img src="{{ url('images/flag-eng.png') }}" width="25" height="25" alt="USA"></a></div>
                         </li>
@@ -163,10 +163,10 @@
             jQuery('.goog-te-combo').val(theLang);
 
             if(theLang == 'vi'){
-                setCookie("googtrans", "/en/vi", 0, "/", ".benhvienmat.local");
+                setCookie("googtrans", "/en/vi", 0, "/", ".benhvienmatlongxuyen.xyz");
                 setCookie("googtrans", "/en/vi", 0, "/");
             }else{
-                setCookie("googtrans", "/vi/en", 0, "/", ".benhvienmat.local");
+                setCookie("googtrans", "/vi/en", 0, "/", ".benhvienmatlõnguyen.xyz");
                 setCookie("googtrans", "/vi/en", 0, "/");
             }
 

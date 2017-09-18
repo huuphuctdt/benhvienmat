@@ -24,15 +24,14 @@ class EditIntroRequest extends FormRequest
     public function rules()
     {
         return [
-            'logo' => 'max:20480|image',
+            'logo' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'logo.max' => 'Tối đa dung lượng là 20Mb.',
-            'logo.image' => 'Đây không phải File hình.',
+            'logo.required' => 'Nội dung buộc phải nhập.',
         ];
     }
 }

@@ -86,7 +86,7 @@
     <div class="row main">
         <div class="panel-heading">
             <div class="panel-title text-center">
-                <h1 class="title">DNTN Tiến Đạt</h1>
+                <h1 class="title">Bệnh viện mắt Long Xuyên</h1>
                 <hr />
                 <h2>Đăng ký</h2>
             </div>

@@ -12,7 +12,7 @@
                             @if($question->is_active == 1)
                                 <div class="accordion-item">
                                     <a href="#" class="accordion-title plain">
-                                        <button class="toggle"><i class="icon-wbc-plus"></i></button><span style="white-space: nowrap; text-overflow: ellipsis; width: 50px;">{{ $question->name }}</span>
+                                        <button class="toggle"><i class="icon-wbc-plus"></i></button><span style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;display: block;width: 100%;">{{ $question->name }}</span>
                                     </a>
                                     <div class="accordion-inner">
                                         {!! nl2br($question->content) !!}
