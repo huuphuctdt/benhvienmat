@@ -136,18 +136,23 @@
                         </li>
                     </ul>
                 </li>
-                <li >
-                    <a href="javascript:;" data-toggle="collapse" data-target="#ul2">
-                        <i class="fa fa-fw fa-picture-o"></i> Banner <i class="fa fa-fw fa-caret-down"></i>
+                {{--<li >--}}
+                    {{--<a href="javascript:;" data-toggle="collapse" data-target="#ul2">--}}
+                        {{--<i class="fa fa-fw fa-picture-o"></i> Banner <i class="fa fa-fw fa-caret-down"></i>--}}
+                    {{--</a>--}}
+                    {{--<ul id="ul2" class="collapse">--}}
+                        {{--<li>--}}
+                            {{--<a href="/admin/banner">Banner Lớn</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="/admin/banner-child">Banner Nhỏ</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
+                <li>
+                    <a href="{{ url('admin/banner') }}">
+                        <i class="fa fa-fw fa-picture-o"></i> Banner
                     </a>
-                    <ul id="ul2" class="collapse">
-                        <li>
-                            <a href="/admin/banner">Banner Lớn</a>
-                        </li>
-                        <li>
-                            <a href="/admin/banner-child">Banner Nhỏ</a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <a href="{{ url('admin/intro') }}">

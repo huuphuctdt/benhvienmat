@@ -39,7 +39,7 @@
                                         <div class="box-text-inner blog-post-inner">
                                             <h5 class="post-title is-large ">{{ $search->name }}</h5>
                                             <div class="is-divider"></div>
-                                            <p class="from_the_blog_excerpt ">{{ mb_strimwidth(strip_tags($search->content),0,50,'...') }}</p>
+                                            <p class="from_the_blog_excerpt ">{{ mb_strimwidth(strip_tags($search->content),0,40,'...') }}</p>
                                         </div><!-- .box-text-inner -->
                                     </div><!-- .box-text -->
                                     <div class="badge absolute top post-date badge-square">

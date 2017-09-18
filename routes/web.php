@@ -78,6 +78,7 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::get('/{post_category}/','MasterController@post');
+Route::get('/errors/404','MasterController@display_error');
 Route::get('/{category}/{title}.html', 'MasterController@post_detail');
 Route::post('search','MasterController@search');
 

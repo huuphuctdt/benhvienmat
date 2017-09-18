@@ -77,6 +77,14 @@ class MasterController extends Controller
         $data['menus'] = $menus;
         $data['post'] = $post;
         $data['promotion'] = $promotion;
+        $data['banner'] = null;
+        $data['intro'] = null;
+        $data['post_categorys'] = null;
+        $data['reviews'] = null;
+        $data['questions'] = null;
+        if($post == null){
+            return redirect('/errors/404');
+        }
         return view('layouts.master',$data);
     }
 
@@ -95,6 +103,11 @@ class MasterController extends Controller
         $data['post'] = $post;
         $data['id'] = $id;
         $data['promotion'] = $promotion;
+        $data['banner'] = null;
+        $data['intro'] = null;
+        $data['post_categorys'] = null;
+        $data['reviews'] = null;
+        $data['questions'] = null;
         return view('layouts.master',$data);
     }
 
@@ -112,6 +125,34 @@ class MasterController extends Controller
         $data['footer'] = $footer;
         $data['promotion'] = $promotion;
         $data['post_categorys'] = $post_categorys;
+        $data['banner'] = null;
+        $data['intro'] = null;
+        $data['reviews'] = null;
+        $data['questions'] = null;
         return view('layouts.master',$data);
+    }
+
+    public function display_error(){
+        $logo = $this->logoController->getLogoAdmin();
+        $menus = $this->menuController->getAllMenuAdmin();
+        $banner = $this->bannerController->getBannerAdmin();
+        $banner_child = $this->bannerChildController->getBannerChild();
+        $intro = $this->introController->getIntroAdmin();
+        $post_categorys = $this->postCategoryController->getAllCategoryAdmin();
+        $reviews = $this->reviewController->getAllReviewAdmin();
+        $questions  = $this->questionController->getAllQuestionAdmin();
+        $footer = $this->footerController->getFooterAdmin();
+        $promotion = $this->promotionController->getPromotionAdmin();
+        $data['logo'] = $logo;
+        $data['menus'] = $menus;
+        $data['banner'] = '';
+        $data['banner_child'] = '';
+        $data['intro'] = '';
+        $data['post_categorys'] = '';
+        $data['reviews'] = '';
+        $data['questions'] = '';
+        $data['footer'] = $footer;
+        $data['promotion'] = '';
+        return view('errors.404',$data);
     }
 }
